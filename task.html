@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html> 
+    <head> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Lusitana:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,900;1,400&display=swap" rel="stylesheet">
+
+        <title> The Clover Project </title>
+        <script> 
+
+        </script> 
+
+        <style>
+            html, body {
+                margin: 0px;
+                height: 100%;
+                font-family: 'Lusitana', serif;
+                color: black;
+            }
+
+            h1, p {
+                margin: 0;
+            }
+
+            .flex {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            aside {
+                background-color: aqua;
+                width: 100px;
+                height: 100px;
+                transition: 500ms;
+            }
+
+            /* aside:hover {
+                width:3000px;
+            } */
+
+            section {
+                width: 100%;
+                background-color: rgb(243, 242, 238);
+            }
+        </style>
+        
+        <script> 
+            var count = 0;
+
+            function openClose() {
+                count++;
+                console.log(count);
+                if (count % 2 == 0) {
+                    document.getElementById("aside").style.width = "0px";
+                    document.getElementById("aside").style.marginLeft = "0px";
+                }
+
+                else {
+                    document.getElementById("aside").style.width = "150px";
+                    document.getElementById("aside").style.marginLeft = "150px";
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="flex">
+        <section> 
+            <button onclick="openClose()"> yo! </button>
+            <aside id="aside"> 
+                <p> asdasdasd   </p>
+                <p> asdasdasd   </p>
+            </aside>    
+        </section>
+    </body>
+</html>
+
