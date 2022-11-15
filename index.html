@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html> 
     <head> 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,22 +9,26 @@
         <title> The Gambino Project </title>
 
         <style>
-            html, body {
+            body {
                 margin: 0px;
+                overflow: overlay;
+            }
+
+            html {
                 height: 100%;
+                width: 100%;
                 font-family: 'Lusitana', serif;
                 color: white;
-                background-color: #323232;
-                max-height: 100vh;
-
+                background-color: #212121;
             }
 
             ::-webkit-scrollbar {
                 width: 10px;
+                background: transparent;
             }
 
             ::-webkit-scrollbar-track {
-                margin: 45px 0px 20px 45px;
+                /* margin: 45px 0px 20px 45px; */
 
                 border-radius: 5px 5px 5px 5px;
 
@@ -45,17 +49,20 @@
             }
 
             section {
-                height: 100vh;
+                height: 87vh;
             }
 
             .flex {
                 display: flex;
             }
 
+            .flex1 {
+                flex: 1;
+            }
             .leftSection {
                 text-align: center;
-                padding: 10px 10px 10px 10px;
-                width: 390px;
+                padding: 20px 10px 10px 10px;
+                width: 360px;
                 max-height: 100vh;
                 overflow-y: scroll;
             }
@@ -66,31 +73,39 @@
             }
 
             .bottomSection {
-                position: fixed;
-                bottom: 0;
-                display: flex;
-
-                width: 100%;
-                height: 70px;
-
-                background-color: rgb(52, 65, 65);
-
-                padding: 35px 10px 35px 10px;
+                height: 1px;
+                /* height: 7vh; */
+                background-color: #2a2626;
+                display: grid;
+                grid-template-columns: 25% 50% 25%;
+                padding: 20px 20px 20px 20px;
             }
+
+            .bottomSection p {
+                text-align: center;
+                font-size: 45px;
+            }   
 
             .bottomSection input, .bottomSection select, .bottomSection button {
-                height: 35px;
-                margin: 5px;
-                outline: none;
-                border: none;
-                border-radius: 5px 5px 5px 5px;
+                height: 25px;
+                width: 50px;
+                padding: 0px;
+                border: 0px;
             }
 
+            li {
+                float: left;
+            }
+
+            ul {
+                list-style-type: none;
+            }
             #calendar {
                 display: grid;
-                grid-template-columns: auto auto auto auto auto auto auto;
-                grid-template-rows: 30px auto auto auto auto auto auto auto;
-                height: 97%
+                grid-template-rows: 30px 17% 17% 17% 17% 17% 17% 17%;
+                grid-template-columns: 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% ;
+                /* grid-template-columns: 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2% ; */
+                height: 92%
             }
 
             .day {
@@ -100,18 +115,14 @@
                 border-radius: 10px 10px 10px 10px;
 
                 display: grid;
-                grid-template-rows: 25px 25px 25px;
+                grid-template-rows: 25px 25px 25px 25px;
             }
 
             .day-task {
-                background-color: #dc0c4b;
+                color: black;
                 margin: 0px 0px 5px 0px;
                 padding: 0px 0px 5px 5px;
                 border-radius: 5px 5px 5px 5px;
-            }
-
-            aside {
-                background-color: #4d4d4d;
             }
 
             .task {
@@ -120,6 +131,9 @@
 
                 display: grid;
                 grid-template-columns: 65px 84%;
+
+                background-color: #4d4d4d;
+
             }
 
             .task-text {
@@ -137,31 +151,33 @@
             }
         </style>
     </head>
-    
-    <body onload="displayCalendar(date.getMonth(), date.getFullYear(), run())">
+
+    <body onload="displayCalendar(date.getMonth(), date.getFullYear()), run()" class=>
+        <!-- <section class="bottomSection"> 
+            <div> 
+                <input class="flex1"> 
+                <select class="flex1">
+                    <option> yao </option>
+                    <option> yao </option>
+                    <option> yao </option>
+                    <option> yao </option>
+                </select> 
+            </div>
+
+            <p class="flex1"> Clover. </p>
+
+            <button class="flex1"> settings </button>
+        </section> -->
+        
         <section class="flex"> 
             <div class="leftSection">
-                <h1> tasks </h1>             
                 <main id="list"> </main>
             </div>
 
             <div class="rightSection">
-                <h1> calendar </h1>
-
                 <main id="calendar">  </main>
             </div>
         </section>
-
-        <!-- <nav class="bottomSection"> 
-            <h1> Clover.</h1>
-            <input>
-            <select> 
-                <option> momo </option>
-                <option> momo </option>
-            </select>
-            <button> settings </button>
-        </nav> -->
-
     </body>
 </html>
 

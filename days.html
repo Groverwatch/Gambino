@@ -1,0 +1,68 @@
+<html> 
+    <head> 
+        <style> 
+            ::-webkit-scrollbar {
+                height: 2px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: red;
+                overflow: overlay;
+                opacity: 0;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: red; 
+                border-radius: 5px 5px 5px 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+            }
+
+            * {
+                margin: 0;
+                text-align: center;
+                color: white;
+                font-family:sans-serif;
+            }
+
+            .day {
+                padding-top: 40px;
+                background-color: lightcoral;
+                font-size: 30px;
+                scroll-snap-align: start;
+            }
+
+            section {
+                display: grid;
+                grid-template-columns: repeat(14, 220px);;
+                /* grid-template-columns: 219px 219px 220px 220px 220px 219px 219px 219px; */
+                height: 100vh;
+                max-width: 100vw;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+            }
+        </style>
+
+        <script> 
+            var html = "";
+            var colors = ["#595959", "#4d4d4d", "#404040", "#333333", "#262626", "#1a1a1a", "#0d0d0d", "#0d0d0d", "#1a1a1a", "#262626", "#333333", "#404040", "#4d4d4d", "#595959"];
+
+            function loadDays() { 
+                for (i = 0; i < 14; i++) {
+                    html += `<div class="day" style="background-color: ${colors[i]};">
+                                <h1> ${i+1} </h1>             
+                            </div>
+`
+                    document.getElementById('daySection').innerHTML = html;
+                }
+            }
+        </script>
+    </head>    
+    <body onload="loadDays()">
+        <section id="daySection"> 
+
+        </section>
+    </body>
+</html>
